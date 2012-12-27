@@ -1,0 +1,5 @@
+<module rename-to="DomainModel" >
+
+    <source path="domain" />
+
+</module>
