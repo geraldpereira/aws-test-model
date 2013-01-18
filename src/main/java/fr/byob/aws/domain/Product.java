@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author gpereira
  *
  */
-public class Product {
+public final class Product {
 	private Integer id;
     private String title;
     private String isbn;
@@ -97,14 +97,10 @@ public class Product {
 		if (this == obj){
 			return true;
 		}
-		if (obj == null){
-			return false;
+		if (obj instanceof Product){
+			return this.hashCode() == obj.hashCode();
 		}
-		if (getClass() != obj.getClass()){
-			return false;
-		}
-		Product other = (Product) obj;
-		return this.hashCode() == other.hashCode();
+		return false;
 	}
 
 }

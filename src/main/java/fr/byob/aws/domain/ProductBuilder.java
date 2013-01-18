@@ -11,14 +11,14 @@ import java.util.List;
  */
 public class ProductBuilder {
 	
-	private static final Integer ID = 130;
-	private static final String TITLE = "test1";
-	private static final String ISBN = "test2";
-	private static final  List<String> AUTHORS = Arrays.asList("test3", "test4");
-	private static final Double PRICE = 20.99;
-	private static final String CATEGORY =  "test5";
-	private static final String DIMENSIONS = "test6";
-	private static final Boolean IN_PUBLICATION = true;
+	static final Integer ID = 130;
+	static final String TITLE = "test1";
+	static final String ISBN = "test2";
+	static final  List<String> AUTHORS = Arrays.asList("test3", "test4");
+	static final Double PRICE = 20.99;
+	static final String CATEGORY =  "test5";
+	static final String DIMENSIONS = "test6";
+	static final Boolean IN_PUBLICATION = true;
 	
 	private Integer id = ID;
     private String title = TITLE;
@@ -29,45 +29,81 @@ public class ProductBuilder {
     private String dimensions = DIMENSIONS;
     private Boolean inPublication = IN_PUBLICATION;
 	
-	public ProductBuilder(){
-	}
-	
-	
+	/**
+	 * Set product id 
+	 * @param id
+	 * @return the productBuilder
+	 */
 	public ProductBuilder id(Integer id){
 		this.id = id;
 		return this;
 	}
 	
+	/**
+	 * Set product title 
+	 * @param title
+	 * @return the productBuilder
+	 */
 	public ProductBuilder title(String title){
 		this.title = title;
 		return this;
 	}
 	
+	/**
+	 * Set product isbn 
+	 * @param isbn
+	 * @return the productBuilder
+	 */
 	public ProductBuilder isbn(String isbn){
 		this.isbn = isbn;
 		return this;
 	}
 	
+	/**
+	 * Set product authors 
+	 * @param authors
+	 * @return the productBuilder
+	 */
 	public ProductBuilder authors(List<String> authors){
 		this.authors = authors;
 		return this;
 	}
 	
+	/**
+	 * Set product price 
+	 * @param price
+	 * @return the productBuilder
+	 */
 	public ProductBuilder price(Double price){
 		this.price = price;
 		return this;
 	}
 	
+	/**
+	 * Set product category 
+	 * @param category
+	 * @return the productBuilder
+	 */
 	public ProductBuilder category(String category){
 		this.category = category;
 		return this;
 	}
 	
+	/**
+	 * Set product dimensions 
+	 * @param dimensions
+	 * @return the productBuilder
+	 */
 	public ProductBuilder dimensions(String dimensions){
 		this.dimensions = dimensions;
 		return this;
 	}
 	
+	/**
+	 * Set product inPublication 
+	 * @param inPublication
+	 * @return the productBuilder
+	 */
 	public ProductBuilder inPublication(Boolean inPublication){
 		this.inPublication = inPublication;
 		return this;
