@@ -5,14 +5,23 @@ import java.util.List;
 
 public class ProductBuilder {
 	
-	private Integer id = 130;
-    private String title = "test1";
-    private String ISBN = "test2";
-    private List<String> authors = Arrays.asList("test3", "test4");
-    private Double price = 20.99;
-    private String category = "test5";
-    private String dimensions = "test6";
-    private Boolean inPublication = true;
+	private final static Integer ID = 130;
+	private final static String TITLE = "test1";
+	private final static String ISBN = "test2";
+	private final static  List<String> AUTHORS = Arrays.asList("test3", "test4");
+	private final static Double PRICE = 20.99;
+	private final static String CATEGORY =  "test5";
+	private final static String DIMENSIONS = "test6";
+	private final static Boolean IN_PUBLICATION = true;
+	
+	private Integer id = ID;
+    private String title = TITLE;
+    private String isbn = ISBN;
+    private List<String> authors = AUTHORS;
+    private Double price = PRICE;
+    private String category = CATEGORY;
+    private String dimensions = DIMENSIONS;
+    private Boolean inPublication = IN_PUBLICATION;
 	
 	public ProductBuilder(){
 	}
@@ -28,8 +37,8 @@ public class ProductBuilder {
 		return this;
 	}
 	
-	public ProductBuilder ISBN(String ISBN){
-		this.ISBN = ISBN;
+	public ProductBuilder isbn(String isbn){
+		this.isbn = isbn;
 		return this;
 	}
 	
@@ -62,7 +71,7 @@ public class ProductBuilder {
 		Product product = new Product();
 		product.setId(id);
 		product.setTitle(title);
-		product.setISBN(ISBN);
+		product.setIsbn(isbn);
 		product.setAuthors(authors);
 		product.setPrice(price);
 		product.setCategory(category);

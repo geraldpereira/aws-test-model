@@ -1,11 +1,12 @@
 package fr.byob.aws.domain;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Product {
 	private Integer id;
     private String title;
-    private String ISBN;
+    private String isbn;
     private List<String> authors;
     private Double price;
     private String category;
@@ -31,12 +32,12 @@ public class Product {
 		this.title = title;
 	}
 
-	public String getISBN() {
-		return ISBN;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public List<String> getAuthors() {
@@ -81,72 +82,22 @@ public class Product {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((ISBN == null) ? 0 : ISBN.hashCode());
-		result = prime * result + ((authors == null) ? 0 : authors.hashCode());
-		result = prime * result
-				+ ((category == null) ? 0 : category.hashCode());
-		result = prime * result
-				+ ((dimensions == null) ? 0 : dimensions.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result
-				+ ((inPublication == null) ? 0 : inPublication.hashCode());
-		result = prime * result + ((price == null) ? 0 : price.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		return result;
+		return Objects.hash(isbn,authors,category,dimensions,id,inPublication,price,title);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj){
 			return true;
-		if (obj == null)
+		}
+		if (obj == null){
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()){
 			return false;
+		}
 		Product other = (Product) obj;
-		if (ISBN == null) {
-			if (other.ISBN != null)
-				return false;
-		} else if (!ISBN.equals(other.ISBN))
-			return false;
-		if (authors == null) {
-			if (other.authors != null)
-				return false;
-		} else if (!authors.equals(other.authors))
-			return false;
-		if (category == null) {
-			if (other.category != null)
-				return false;
-		} else if (!category.equals(other.category))
-			return false;
-		if (dimensions == null) {
-			if (other.dimensions != null)
-				return false;
-		} else if (!dimensions.equals(other.dimensions))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (inPublication == null) {
-			if (other.inPublication != null)
-				return false;
-		} else if (!inPublication.equals(other.inPublication))
-			return false;
-		if (price == null) {
-			if (other.price != null)
-				return false;
-		} else if (!price.equals(other.price))
-			return false;
-		if (title == null) {
-			if (other.title != null)
-				return false;
-		} else if (!title.equals(other.title))
-			return false;
-		return true;
+		return this.hashCode() == other.hashCode();
 	}
 
 }
