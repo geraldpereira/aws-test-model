@@ -13,8 +13,7 @@ public class ProductBuilderTest {
 	}
 	@Test
 	public void testTitle() {
-		final Product product = new Product();
-		product.setTitle(ProductBuilder.TITLE);
+		final Product product = new ProductBuilder().title(ProductBuilder.TITLE).build();
 		assertEquals(ProductBuilder.TITLE,product.getTitle());
 	}
 	@Test
