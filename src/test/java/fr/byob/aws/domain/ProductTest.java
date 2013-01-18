@@ -1,17 +1,20 @@
 package fr.byob.aws.domain;
 
-import static junit.framework.Assert.assertEquals;
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 
 import org.junit.Test;
 
+import static junit.framework.Assert.*;
+
 public class ProductTest {
 	
+	/**
+	 * 	Jersey uses JAXB beans so our Product cannot be immutable (with an internal buidler).
+	 */
 	@Test
 	public void testEquals() {
-		final ProductBuilder builder = new ProductBuilder();
-		final Product p1 = builder.build();
-		final Product p2 = builder.build();
-		assertEquals(p1, p2);
+	    EqualsVerifier.forClass(Product.class).suppress(Warning.NONFINAL_FIELDS).verify();
 	}
 
 	@Test
@@ -21,7 +24,7 @@ public class ProductTest {
 		assertEquals(ProductBuilder.ID,product.getId());
 	}
 	@Test
-	public void testtTitle() {
+	public void testTitle() {
 		final Product product = new Product();
 		product.setTitle(ProductBuilder.TITLE);
 		assertEquals(ProductBuilder.TITLE,product.getTitle());
