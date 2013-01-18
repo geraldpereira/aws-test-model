@@ -3,6 +3,13 @@ package fr.byob.aws.domain;
 import java.util.List;
 import java.util.Objects;
 
+
+/**
+ * POJO Product bean
+ * 
+ * @author gpereira
+ *
+ */
 public class Product {
 	private Integer id;
     private String title;

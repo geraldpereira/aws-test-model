@@ -3,16 +3,22 @@ package fr.byob.aws.domain;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Product builder, used to build the Product bean
+ * 
+ * @author gpereira
+ *
+ */
 public class ProductBuilder {
 	
-	private final static Integer ID = 130;
-	private final static String TITLE = "test1";
-	private final static String ISBN = "test2";
-	private final static  List<String> AUTHORS = Arrays.asList("test3", "test4");
-	private final static Double PRICE = 20.99;
-	private final static String CATEGORY =  "test5";
-	private final static String DIMENSIONS = "test6";
-	private final static Boolean IN_PUBLICATION = true;
+	private static final Integer ID = 130;
+	private static final String TITLE = "test1";
+	private static final String ISBN = "test2";
+	private static final  List<String> AUTHORS = Arrays.asList("test3", "test4");
+	private static final Double PRICE = 20.99;
+	private static final String CATEGORY =  "test5";
+	private static final String DIMENSIONS = "test6";
+	private static final Boolean IN_PUBLICATION = true;
 	
 	private Integer id = ID;
     private String title = TITLE;
@@ -67,6 +73,10 @@ public class ProductBuilder {
 		return this;
 	}
 	
+	/**
+	 * Builds the product
+	 * @return the product
+	 */
 	public final Product build() {
 		Product product = new Product();
 		product.setId(id);
