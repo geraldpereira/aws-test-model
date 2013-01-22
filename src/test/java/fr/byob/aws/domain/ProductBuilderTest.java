@@ -7,11 +7,6 @@ import org.junit.Test;
 public class ProductBuilderTest {
 	
 	@Test
-	public void testId() {
-		final Product product = new ProductBuilder().id(ProductBuilder.ID).build();
-		assertEquals(ProductBuilder.ID,product.getId());
-	}
-	@Test
 	public void testTitle() {
 		final Product product = new ProductBuilder().title(ProductBuilder.TITLE).build();
 		assertEquals(ProductBuilder.TITLE,product.getTitle());

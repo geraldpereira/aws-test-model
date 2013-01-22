@@ -20,8 +20,8 @@ public class ProductTest {
 	@Test
 	public void testId() {
 		final Product product = new Product();
-		product.setId(ProductBuilder.ID);
-		assertEquals(ProductBuilder.ID,product.getId());
+		product.setId("fakeId");
+		assertEquals("fakeId",product.getId());
 	}
 	@Test
 	public void testTitle() {
